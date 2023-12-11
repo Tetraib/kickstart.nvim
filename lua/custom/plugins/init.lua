@@ -3,4 +3,10 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+	{
+		"zbirenbaum/copilot.lua",
+		config = function()
+			require("copilot").setup({})
+		end
+	}
 }
