@@ -11,34 +11,12 @@ return {
             vim.cmd.colorscheme 'catppuccin-mocha'
         end,
     },
+    { "github/copilot.vim" },
+    { "tpope/vim-surround" },
     {
-        "zbirenbaum/copilot.lua",
-        config = function()
-            require("copilot").setup({})
-        end
-    },
-    {
-        "debugloop/telescope-undo.nvim",
-        dependencies = {
-            {
-                "nvim-telescope/telescope.nvim",
-                dependencies = { "nvim-lua/plenary.nvim" },
-            },
-        },
+        "mbbill/undotree",
         keys = {
-            {
-                "<leader>u",
-                "<cmd>Telescope undo<cr>",
-                desc = "undo history",
-            },
+            { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle UndoTree" },
         },
-        config = function(_, opts)
-            require("telescope").setup(opts)
-            require("telescope").load_extension("undo")
-        end,
     },
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-    }
 }
